@@ -1,0 +1,799 @@
+
+.home {
+  min-height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background: #f8fafc;
+
+  padding-top: 78px;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.home-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 20%,
+    transparent 90%
+  );
+}
+
+.home-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+.home-glow-one {
+  width: 420px;
+  height: 420px;
+
+  right: -130px;
+  top: 100px;
+
+  background: rgba(16, 185, 129, 0.10);
+}
+
+.home-glow-two {
+  width: 300px;
+  height: 300px;
+
+  left: -100px;
+  bottom: 40px;
+
+  background: rgba(59, 130, 246, 0.06);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.home-container {
+  width: min(1200px, 92%);
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  position: relative;
+  z-index: 2;
+
+  padding: 70px 0 100px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.home-content {
+  max-width: 670px;
+}
+
+.home-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 7px 12px;
+
+  background: rgba(16, 185, 129, 0.08);
+
+  border: 1px solid rgba(16, 185, 129, 0.18);
+
+  border-radius: 30px;
+
+  color: #059669;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.label-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #10b981;
+
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.35);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.home h1 {
+  margin-top: 25px;
+
+  color: #0f172a;
+
+  font-size: clamp(45px, 5vw, 72px);
+
+  line-height: 1.03;
+
+  letter-spacing: -3.2px;
+
+  font-weight: 800;
+}
+
+.home h1 span {
+  color: #10b981;
+}
+
+.home-description {
+  max-width: 600px;
+
+  margin-top: 26px;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   IDENTITY
+========================= */
+
+.identity-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.identity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.03);
+}
+
+.identity-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ecfdf5;
+
+  color: #059669;
+
+  border-radius: 7px;
+}
+
+.identity-item div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.identity-item strong {
+  color: #1e293b;
+
+  font-size: 11px;
+}
+
+.identity-item span {
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.home-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.primary-button,
+.secondary-button {
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 19px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: all 0.25s ease;
+}
+
+.primary-button {
+  background: #0b1220;
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background: #10b981;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 25px rgba(16, 185, 129, 0.2);
+}
+
+.secondary-button {
+  background: #ffffff;
+
+  color: #334155;
+
+  border: 1px solid #e2e8f0;
+}
+
+.secondary-button:hover {
+  border-color: #10b981;
+
+  color: #059669;
+
+  transform: translateY(-3px);
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.home-location {
+  margin-top: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+/* =========================
+   VISUAL
+========================= */
+
+.home-visual {
+  min-height: 540px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-card {
+  width: 380px;
+  min-height: 460px;
+
+  position: relative;
+  z-index: 3;
+
+  padding: 25px;
+
+  background: #0b1220;
+
+  border-radius: 22px;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 35px 80px rgba(15, 23, 42, 0.22),
+    0 10px 25px rgba(15, 23, 42, 0.12);
+
+  transform: rotate(2deg);
+
+  overflow: hidden;
+}
+
+.visual-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  right: -120px;
+  top: -110px;
+
+  border-radius: 50%;
+
+  background: rgba(16, 185, 129, 0.18);
+
+  filter: blur(20px);
+}
+
+.visual-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: -100px;
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.visual-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 2;
+}
+
+.visual-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+.visual-status span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #10b981;
+
+  box-shadow: 0 0 10px #10b981;
+}
+
+.visual-card-top svg {
+  color: #10b981;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.visual-main {
+  margin-top: 65px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.visual-code {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.code-number {
+  color: #10b981;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.code-line {
+  width: 45px;
+  height: 1px;
+
+  background: #334155;
+}
+
+.visual-main h2 {
+  font-size: 54px;
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+}
+
+.visual-main h2 span {
+  color: #10b981;
+}
+
+.visual-main p {
+  max-width: 230px;
+
+  margin-top: 22px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.visual-footer {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding-top: 18px;
+}
+
+.mini-stat {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.mini-stat strong {
+  font-size: 10px;
+  color: #ffffff;
+}
+
+.mini-stat span {
+  font-size: 8px;
+  color: #64748b;
+}
+
+/* =========================
+   ORBITS
+========================= */
+
+.visual-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(16, 185, 129, 0.13);
+
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 500px;
+  height: 500px;
+}
+
+.orbit-two {
+  width: 600px;
+  height: 300px;
+
+  transform: rotate(-35deg);
+
+  border-color: rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.floating-card {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-card svg {
+  color: #10b981;
+}
+
+.floating-card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-card strong {
+  font-size: 10px;
+  color: #1e293b;
+}
+
+.floating-card span {
+  margin-top: 2px;
+
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.floating-card-one {
+  left: 10px;
+  top: 120px;
+}
+
+.floating-card-two {
+  right: 0;
+  bottom: 120px;
+
+  animation-delay: -2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  background: transparent;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  z-index: 5;
+}
+
+.scroll-indicator svg {
+  color: #10b981;
+
+  animation: scrollArrow 1.8s infinite;
+}
+
+@keyframes scrollArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .home-container {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding-top: 50px;
+  }
+
+  .home-content {
+    max-width: 760px;
+  }
+
+  .home-visual {
+    min-height: 500px;
+  }
+
+  .visual-card {
+    width: 360px;
+  }
+}
+
+@media (max-width: 650px) {
+  .home {
+    padding-top: 70px;
+  }
+
+  .home-container {
+    width: 90%;
+
+    padding: 45px 0 85px;
+  }
+
+  .home h1 {
+    font-size: 43px;
+
+    letter-spacing: -2px;
+  }
+
+  .home-description {
+    font-size: 14px;
+  }
+
+  .identity-list {
+    flex-direction: column;
+  }
+
+  .identity-item {
+    width: 100%;
+  }
+
+  .home-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .home-visual {
+    min-height: 440px;
+
+    margin-top: 10px;
+  }
+
+  .visual-card {
+    width: 310px;
+    min-height: 400px;
+
+    padding: 20px;
+  }
+
+  .visual-main {
+    margin-top: 55px;
+  }
+
+  .visual-main h2 {
+    font-size: 46px;
+  }
+
+  .floating-card-one {
+    left: -2px;
+    top: 75px;
+  }
+
+  .floating-card-two {
+    right: -2px;
+    bottom: 70px;
+  }
+
+  .orbit-one {
+    width: 400px;
+    height: 400px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .home h1 {
+    font-size: 38px;
+  }
+
+  .visual-card {
+    width: 280px;
+  }
+
+  .floating-card {
+    padding: 9px 11px;
+  }
+}

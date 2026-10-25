@@ -1,0 +1,249 @@
+
+/* ==============================
+   Admin Dashboard
+   Sidebar-Compatible Layout
+================================= */
+
+.admin-dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+  background: #f4f6fb;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #1e293b;
+}
+
+/* Dashboard Heading */
+.admin-dashboard-container h2 {
+  margin: 0 0 28px;
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+  color: #172554;
+}
+
+/* Search Bar */
+.dashboard-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.dashboard-search:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.dashboard-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.dashboard-search input::placeholder {
+  color: #94a3b8;
+}
+
+.dashboard-search button {
+  width: 44px;
+  height: 42px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 9px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dashboard-search button:hover {
+  background: #3730a3;
+}
+
+/* Statistics */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  min-height: 130px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #edf0f7;
+  border-radius: 17px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.035);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #6366f1;
+}
+
+.stat-card:nth-child(2)::before {
+  background: #06b6d4;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.07);
+}
+
+.stat-card h3 {
+  margin: 0 0 10px;
+  color: #4f46e5;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.stat-card:nth-child(2) h3 {
+  color: #0891b2;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Quick Actions */
+.dashboard-links {
+  padding: 26px;
+  background: #fff;
+  border: 1px solid #edf0f7;
+  border-radius: 17px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.035);
+}
+
+.dashboard-links h3 {
+  margin: 0 0 22px;
+  color: #172554;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.links-grid button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 60px;
+  padding: 14px;
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #4338ca;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.links-grid button:hover {
+  color: #fff;
+  background: #4f46e5;
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.16);
+}
+
+.links-grid button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .admin-dashboard-container {
+    padding: 24px;
+  }
+
+  .links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .admin-dashboard-container {
+    padding: 18px 14px;
+  }
+
+  .admin-dashboard-container h2 {
+    font-size: 23px;
+    margin-bottom: 22px;
+  }
+
+  .dashboard-stats {
+    gap: 14px;
+  }
+
+  .stat-card {
+    padding: 18px 16px;
+    min-height: 110px;
+  }
+
+  .stat-card h3 {
+    font-size: 29px;
+  }
+
+  .stat-card p {
+    font-size: 12px;
+  }
+
+  .dashboard-links {
+    padding: 20px 15px;
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .links-grid button {
+    min-height: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .dashboard-search,
+  .links-grid button {
+    transition: none;
+  }
+}

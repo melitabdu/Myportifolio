@@ -1,0 +1,93 @@
+
+/* ==============================
+   Admin Layout
+================================= */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f6fb;
+  color: #1e293b;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 260px; /* Match your sidebar width */
+  display: flex;
+  flex-direction: column;
+  background: #f4f6fb;
+  transition: margin-left 0.3s ease;
+}
+
+/* Top Header */
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  min-height: 76px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e8edf5;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.025);
+}
+
+.admin-header h1 {
+  margin: 0;
+  color: #172554;
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+/* Routed Page Content */
+.admin-page-content {
+  flex: 1;
+  min-width: 0;
+  padding: 28px 32px;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 220px;
+  }
+
+  .admin-header {
+    padding: 0 24px;
+  }
+
+  .admin-page-content {
+    padding: 24px;
+  }
+}
+
+/* Mobile
+   Assumes Sidebar.css changes the sidebar
+   to a mobile-friendly or collapsible layout. */
+@media (max-width: 600px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .admin-header {
+    min-height: 64px;
+    padding: 0 18px;
+  }
+
+  .admin-header h1 {
+    font-size: 20px;
+  }
+
+  .admin-page-content {
+    padding: 18px 14px;
+  }
+}
