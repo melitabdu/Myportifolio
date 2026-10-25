@@ -48,6 +48,9 @@ app.use(
       "http://localhost:5173", // Public frontend
       "http://localhost:5734", // Admin frontend
       "http://localhost:3000",
+
+  "https://YOUR-ACTUAL-VERCEL-DOMAIN.vercel.app",
+
     ],
     credentials: true,
   })
