@@ -49,7 +49,7 @@ app.use(
       "http://localhost:5734", // Admin frontend
       "http://localhost:3000",
 
-  "https://YOUR-ACTUAL-VERCEL-DOMAIN.vercel.app",
+ " https://myportifolio-h8vw.vercel.app",
 
     ],
     credentials: true,
