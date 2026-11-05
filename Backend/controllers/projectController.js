@@ -9,6 +9,25 @@ const handleError = (res, error) => {
   });
 };
 
+// Validate three image URLs
+const validateImages = (body) => {
+  const imageFields = ["image", "image2", "image3"];
+
+  for (const field of imageFields) {
+    const value = body[field];
+
+    if (value && typeof value !== "string") {
+      return `${field} must be a valid URL string`;
+    }
+
+    if (value && !/^https?:\/\/.+/i.test(value)) {
+      return `${field} must be a valid HTTP or HTTPS URL`;
+    }
+  }
+
+  return null;
+};
+
 // PUBLIC: Get published projects
 export const getProjects = async (req, res) => {
   try {
@@ -38,6 +57,15 @@ export const getAllProjects = async (req, res) => {
 // ADMIN: Create project
 export const createProject = async (req, res) => {
   try {
+    const imageError = validateImages(req.body);
+
+    if (imageError) {
+      return res.status(400).json({
+        success: false,
+        message: imageError,
+      });
+    }
+
     const project = await projectModel.create(req.body);
 
     res.status(201).json({
@@ -67,6 +95,15 @@ export const createProject = async (req, res) => {
 // ADMIN: Update project
 export const updateProject = async (req, res) => {
   try {
+    const imageError = validateImages(req.body);
+
+    if (imageError) {
+      return res.status(400).json({
+        success: false,
+        message: imageError,
+      });
+    }
+
     const project = await projectModel.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
